@@ -1,0 +1,16 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<ul>
+{% for list in products_lists %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ list.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ list.type }}</h6>
+            <p class="card-text">{{ list.description }}</p>
+            <a class="btn btn-primary" href="{% url 'list_details' pk=list.pk %}" class="card-link">Ver productos</a>
+        </div>
+    </div>
+{% endfor %}
+</ul>
+{% endblock %}

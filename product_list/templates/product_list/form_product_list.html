@@ -1,0 +1,23 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+<form>
+    <div class="form-group">
+        <label for="list_name">Nombre de la lista</label>
+        <input type="text" class="form-control" id="list_name" placeholder="Nombre de la lista">
+    </div>
+    <div class="form-group">
+        <label for="list_description">Descripción de la lista</label>
+        <textarea class="form-control" id="list_description" rows="3" style="resize:none;"></textarea>
+    </div>
+  <div class="form-group">
+    <label for="list_type">Tipo de lista</label>
+    <select class="form-control" id="list_type">
+        {% for type in product_types %}
+        <option>{{ type.name }}</option>
+        {% endfor %}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+{% endblock %}
